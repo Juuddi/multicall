@@ -1,6 +1,5 @@
-import "@nomiclabs/hardhat-ethers";
-import "@nomiclabs/hardhat-waffle";
+import '@nomicfoundation/hardhat-toolbox'
 
 export default {
-  solidity: "0.6.8",
-};
+	solidity: '0.6.8',
+}
