@@ -1,33 +1,31 @@
-import { JsonFragment } from "@ethersproject/abi";
-import { Interface } from "ethers/lib/utils";
-import { BigNumber } from "ethers";
+import { BigNumberish, JsonFragment, Interface } from 'quais'
 
 export type CallInput = {
-  target: string;
-  interface?: Interface | JsonFragment[];
-  function: string;
-  args?: Array<any>;
+	target: string
+	interface?: Interface | JsonFragment[]
+	function: string
+	args?: Array<any>
 }
 
-export interface UniswapPairReserves {
-  reserve0: BigNumber;
-  reserve1: BigNumber;
-  blockTimestampLast: number;
-}
+// export interface UniswapPairReserves {
+// 	reserve0: BigNumberish
+// 	reserve1: BigNumberish
+// 	blockTimestampLast: number
+// }
 
-export interface UniswapReservesData {
-  [key: string]: UniswapPairReserves;
-}
+// export interface UniswapReservesData {
+// 	[key: string]: UniswapPairReserves
+// }
 
 export interface TokenBalances {
-  [key: string]: BigNumber;
+	[key: string]: BigNumberish
 }
 
 export interface TokenBalanceAndAllowance {
-  balance: BigNumber;
-  allowance: BigNumber;
+	balance: BigNumberish
+	allowance: BigNumberish
 }
 
 export interface TokenBalancesAndAllowances {
-  [key: string]: TokenBalanceAndAllowance;
+	[key: string]: TokenBalanceAndAllowance
 }
