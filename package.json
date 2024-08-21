@@ -37,5 +37,8 @@
     "Ethereum"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "quais": "^1.0.0-alpha.8"
+  }
 }

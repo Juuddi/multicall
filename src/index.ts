@@ -1,7 +1,7 @@
 import { MultiCall } from './MultiCall';
 
 export * from './tokens';
-export * from './uniswap';
+// export * from './uniswap';
 export * from './generic';
 export * from './types';
 
