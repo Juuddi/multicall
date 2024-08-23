@@ -1,5 +1,9 @@
 {
 	"name": "@quais/multicall",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/dominant-strategies/quais-multicall.git"
+	},
 	"version": "1.0.0",
 	"description": "Solidity contract and typescript library for static multi-calls on Quai Network",
 	"main": "dist/index.js",
@@ -8,28 +12,22 @@
 		"dist"
 	],
 	"devDependencies": {
-		"@nomicfoundation/hardhat-toolbox": "^5.0.0",
-		"@types/chai": "^4.3.17",
-		"@types/mocha": "^10.0.7",
-		"chai": "^4.2.0",
-		"hardhat": "^2.22.9",
-		"mocha": "^8.2.0",
 		"quais": "^1.0.0-alpha.8",
 		"rimraf": "^3.0.2",
 		"ts-node": "^9.0.0",
 		"typescript": "^4.0.5"
 	},
 	"scripts": {
-		"compile": "hardhat compile",
-		"prebuild": "npm run compile && rimraf ./dist && node ./copy-bytecode.js",
+		"prebuild": "rimraf ./dist",
 		"build": "tsc -p tsconfig.build.json",
-		"test": "hardhat test",
 		"prepublish": "npm run build"
 	},
 	"keywords": [
-		"Solidity",
-		"Quai Network"
+		"solidity",
+		"quainetwork",
+		"multicall",
+		"quais"
 	],
-	"author": "",
+	"author": "Dominant Strategies",
 	"license": "MIT"
 }
