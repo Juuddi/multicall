@@ -1,4 +1,4 @@
-# quai/multicall
+# @quais/multicall
 
 Solidity contract and typescript library for static multi-calls.
 
@@ -16,7 +16,7 @@ All multicalls return the block number the data was pulled from.
 
 ## Install
 
-> npm install --save @indexed-finance/multicall
+> npm install --save @quais/multicall
 
 # Examples
 

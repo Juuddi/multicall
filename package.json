@@ -1,7 +1,7 @@
 {
-	"name": "@indexed-finance/multicall",
-	"version": "2.0.0",
-	"description": "Solidity contract and typescript library for static multi-calls",
+	"name": "@quais/multicall",
+	"version": "1.0.0",
+	"description": "Solidity contract and typescript library for static multi-calls on Quai Network",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
