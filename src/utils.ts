@@ -1,4 +1,4 @@
-import { Interface, JsonFragment } from 'quais'
+import { JsonFragment } from 'quais'
 
 /**
  * Checks if the input is a JSON fragment array.

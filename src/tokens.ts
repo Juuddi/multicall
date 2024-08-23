@@ -1,4 +1,4 @@
-import { BigNumberish, AbiCoder, Provider } from 'quais'
+import { AbiCoder, Provider } from 'quais'
 
 import { TokenBalances, TokenBalancesAndAllowances } from './types'
 import { MultiTokenBalanceAndAllowanceGetter, MultiTokenBalanceGetter } from './bytecode.json'
