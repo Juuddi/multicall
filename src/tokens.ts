@@ -15,7 +15,7 @@ export async function getBalances(provider_: Provider, tokens: string[], account
 	const provider = provider_
 	const inputData = AbiCoder.defaultAbiCoder().encode(['address[]', 'address'], [tokens, account])
 	const bytecode = MultiTokenBalanceGetter.concat(inputData.slice(2))
-	const encodedReturnData = await provider.call({ from: '0x005f644097F8f0E9f996Dca4F4F23aBB6C1Cc8b3', data: bytecode })
+	const encodedReturnData = await provider.call({ from: '0x0000000000000000000000000000000000000000', data: bytecode })
 	const [blockNumber, decodedReturnData] = AbiCoder.defaultAbiCoder().decode(['uint256', 'uint256[]'], encodedReturnData)
 	const balances: TokenBalances = {}
 	for (let i = 0; i < tokens.length; i++) {
@@ -42,7 +42,7 @@ export async function getBalancesAndAllowances(
 	const provider = provider_
 	const inputData = AbiCoder.defaultAbiCoder().encode(['address[]', 'address', 'address'], [tokens, owner, spender])
 	const bytecode = MultiTokenBalanceAndAllowanceGetter.concat(inputData.slice(2))
-	const encodedReturnData = await provider.call({ from: '0x005f644097F8f0E9f996Dca4F4F23aBB6C1Cc8b3', data: bytecode })
+	const encodedReturnData = await provider.call({ from: '0x0000000000000000000000000000000000000000', data: bytecode })
 	const [blockNumber, decodedReturnData] = AbiCoder.defaultAbiCoder().decode(['uint256', 'uint256[2][]'], encodedReturnData)
 	const balancesAndAllowances: TokenBalancesAndAllowances = {}
 	for (let i = 0; i < tokens.length; i++) {

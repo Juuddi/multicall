@@ -4,7 +4,7 @@ Solidity contract and typescript library for static multi-calls.
 
 The MultiCall.sol contract executes multiple calls inside its constructor and returns the result as an ABI encoded bytes array. When the initialization code is sent to the 0 address as an `quai_call` operation, the code is not deployed and the returndata that would have been deployed if it was sent with `quai_sendTransaction` is returned. This enables simple multi-call functionality for on-chain queries without needing to deploy an aggregator contract.
 
-The class defines a generic function `multiCall` that takes an [quais `Interface` object](https://docs.qu.ai/sdk/content/classes/Interface#interface) or an array of [JSON ABI Fragments](https://docs.qu.ai/sdk/content/interfaces/JsonFragment) as inputs along with the address, function names and arguments to call. The class then decodes the returndata and returns the results as an array.
+The class defines a generic function `multiCall` that takes an [quais Interface object](https://docs.qu.ai/sdk/content/classes/Interface#interface) or an array of [JSON ABI Fragments](https://docs.qu.ai/sdk/content/interfaces/JsonFragment) as inputs along with the address, function names and arguments to call. The class then decodes the returndata and returns the results as an array.
 
 There are also three more specific contracts in this library that can simplify common use-cases while using less bytecode.
 These are:
@@ -42,7 +42,7 @@ contract TokenMap {
 We can execute a multi-call with this javascript code:
 
 ```js
-const MultiCall = require('@indexed-finance/multicall')
+const MultiCall = require('@quais/multicall')
 const { abi } = require('./artifacts/TokenMap.json')
 
 async function getMultiCallResults(provider, tokenMapAddress, tokens) {
