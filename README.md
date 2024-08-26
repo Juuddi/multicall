@@ -61,19 +61,19 @@ async function getMultiCallResults(provider, tokenMapAddress, tokens) {
 ## Querying Token Balances
 
 ```js
-// Check the balance of the null address for some ERC20 tokens
+// Check the balance of the null address for Quai and ERC20 tokens
 const multi = new MultiCall(provider)
 const tokens = [
 	'0x00312BBd02dB610F6EdC61c0FCE4d1Ec6971651f', // some ERC20 token
 	'0x00580E633d6d42928F7754444444aa78312C3dcA', // some ERC20 token
-	'0x006f3A5dE5fdE66168e2C11f482A5716FBf97f45', // some ERC20 token
+	'0x0000000000000000000000000000000000000000', // quai
 ]
 const account = '0x0000000000000000000000000000000000000000'
 const [blockNumber, balances] = await multi.getBalances(tokens, account)
 
 const balance1 = balances['0x00312BBd02dB610F6EdC61c0FCE4d1Ec6971651f']
 const balance2 = balances['0x00580E633d6d42928F7754444444aa78312C3dcA']
-const balance3 = balances['0x006f3A5dE5fdE66168e2C11f482A5716FBf97f45']
+const balance3 = balances['0x0000000000000000000000000000000000000000']
 ```
 
 ## Querying Token Balances and Allowances
@@ -154,7 +154,7 @@ The result will be a promise which resolves to an array with two values: the fir
 
 ### `MultiCall.getBalances`
 
-The `MultiCall` class has a `getBalances` function which can query the balance of a single account for many tokens.
+The `MultiCall` class has a `getBalances` function which can query the balance of a single account for many tokens. If the null address (0x0000000000000000000000000000000000000000) is provided as an input token, the balance returned will be the quai balance of account
 
 ```ts
 getBalances(tokens: string[], account: string);
@@ -167,7 +167,11 @@ getBalances(tokens: string[], account: string);
 An array of token addresses.
 
 ```ts
-const tokens = ['0x00312BBd02dB610F6EdC61c0FCE4d1Ec6971651f', '0x00580E633d6d42928F7754444444aa78312C3dcA']
+const tokens = [
+	'0x00312BBd02dB610F6EdC61c0FCE4d1Ec6971651f',
+	'0x00580E633d6d42928F7754444444aa78312C3dcA',
+	'0x0000000000000000000000000000000000000000',
+]
 ```
 
 **`account`**
