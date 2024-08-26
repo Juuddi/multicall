@@ -76,7 +76,7 @@ export async function multiCall(
 	const fulldata = (strict ? bytecodeStrict : bytecode).concat(inputData.slice(2))
 
 	// simulate transaction call to get return data
-	const encodedReturnData = await provider.call({ from: '0x005f644097F8f0E9f996Dca4F4F23aBB6C1Cc8b3', data: fulldata })
+	const encodedReturnData = await provider.call({ from: '0x0000000000000000000000000000000000000000', data: fulldata })
 
 	// decode return data and construct results array
 	const [blockNumber, returndatas] = AbiCoder.defaultAbiCoder().decode(['uint256', 'bytes[]'], encodedReturnData)

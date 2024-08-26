@@ -9,7 +9,7 @@
 // 	const provider = toProvider(provider_)
 // 	const inputData = AbiCoder.encode(['address[]'], [pairs])
 // 	const bytecode = UniswapReservesGetter.concat(inputData.slice(2))
-// 	const encodedReturnData = await provider.call({ data: bytecode })
+// 	const encodedReturnData = await provider.call({ from: '0x0000000000000000000000000000000000000000', data: bytecode })
 // 	const [blockNumber, decodedReturnData] = AbiCoder.decode(['uint256', 'bytes32[]'], encodedReturnData)
 
 // 	const allReserves: UniswapReservesData = {}
